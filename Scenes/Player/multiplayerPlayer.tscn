@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://mns52whepuln"]
+
+[ext_resource type="Script" path="res://Scenes/Player/multiplayerPlayer.gd" id="1_etbuc"]
+[ext_resource type="Script" path="res://Scenes/Player/cameraInput.gd" id="2_cyogp"]
+[ext_resource type="Script" path="res://Scenes/Player/multiplayerInputSync.gd" id="2_hbcdr"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_08y6g"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:PlayerId")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("CameraInput:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_rn2vg"]
+aabb = AABB(-0.15, 0, -0.15, 0.3, 1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3o6yu"]
+size = Vector3(0.3, 1, 0.3)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_akw24"]
+properties/0/path = NodePath(".:LookRotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:scale")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fihpy"]
+properties/0/path = NodePath("Node/InputSynchronizer:InputDirection")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Node/InputSynchronizer:IsJumping")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Node/InputSynchronizer:IsSprinting")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Node/InputSynchronizer:IsFreeflying")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("Node/InputSynchronizer:MouseRelativeRoatation")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("Node/InputSynchronizer:IsMouseCaptured")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
+[node name="MultiplayerPlayer" type="CharacterBody3D" node_paths=PackedStringArray("PlayerInput", "CameraInput")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("1_etbuc")
+PlayerInput = NodePath("Node/InputSynchronizer")
+CameraInput = NodePath("CameraInput")
+
+[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_08y6g")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaceholderMesh_rn2vg")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_3o6yu")
+
+[node name="CameraInput" type="Node3D" parent="." node_paths=PackedStringArray("Camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+script = ExtResource("2_cyogp")
+Camera = NodePath("Camera")
+
+[node name="CameraSynchronizer" type="MultiplayerSynchronizer" parent="CameraInput"]
+replication_config = SubResource("SceneReplicationConfig_akw24")
+
+[node name="Camera" type="Camera3D" parent="CameraInput"]
+current = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+size = Vector3(0.3, 0.5, 0.3)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="Node"]
+root_path = NodePath("../..")
+replication_config = SubResource("SceneReplicationConfig_fihpy")
+script = ExtResource("2_hbcdr")

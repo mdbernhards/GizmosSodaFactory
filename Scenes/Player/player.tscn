@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8eqn00qoankd"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_wyav0"]
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_nkyae"]
+aabb = AABB(-0.15, 0, -0.15, 0.3, 1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkdrw"]
+size = Vector3(0.3, 1, 0.3)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_wyav0")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaceholderMesh_nkyae")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_nkdrw")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+size = Vector3(0.3, 0.5, 0.3)

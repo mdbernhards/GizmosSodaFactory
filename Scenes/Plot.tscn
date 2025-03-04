@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://j5kowiwmhm5o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jduy"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.160391, 0.428964, 3.08037e-06, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mukb"]
+transparency = 1
+albedo_color = Color(0.207843, 0.34902, 0.952941, 1)
+
+[node name="Plot" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7, -0.4, 0)
+
+[node name="PlotGround" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -50)
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_1jduy")
+
+[node name="Sign" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1, -50)
+radius = 0.05
+height = 1.25
+sides = 25
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149918, 0.85, 0)
+size = Vector3(0.001, 0.5, 0.8)
+
+[node name="Water" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -0.301, -8.9)
+size = Vector3(10, 1.8, 10)
+material = SubResource("StandardMaterial3D_8mukb")
+
+[node name="ExclamationMark" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, -50)
+radius = 0.2
+radial_segments = 20
+rings = 10
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="ExclamationMark"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 1.2, 0)
+radius = 0.3
+height = 1.8
+sides = 40
+cone = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="ExclamationMark/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.899999, 0)
+radius = 0.3
+radial_segments = 40
+rings = 15
