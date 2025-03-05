@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://mns52whepuln"]
 
-[ext_resource type="Script" path="res://Scenes/Player/multiplayerPlayer.gd" id="1_etbuc"]
-[ext_resource type="Script" path="res://Scenes/Player/cameraInput.gd" id="2_cyogp"]
-[ext_resource type="Script" path="res://Scenes/Player/multiplayerInputSync.gd" id="2_hbcdr"]
+[ext_resource type="Script" uid="uid://cfm0um6ep5k70" path="res://Scenes/Player/multiplayerPlayer.gd" id="1_etbuc"]
+[ext_resource type="Script" uid="uid://bg6s1nhpncw0v" path="res://Scenes/Player/cameraInput.gd" id="2_cyogp"]
+[ext_resource type="Script" uid="uid://bjfjedmncaxm6" path="res://Scenes/Player/multiplayerInputSync.gd" id="2_hbcdr"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_08y6g"]
 properties/0/path = NodePath(".:position")

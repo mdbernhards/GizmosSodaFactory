@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxcog4wulvod0"]
+[gd_scene load_steps=8 format=3 uid="uid://cxcog4wulvod0"]
 
 [ext_resource type="PackedScene" uid="uid://cq4uso75w62nu" path="res://Scenes/UI/loading.tscn" id="1_0osdv"]
 [ext_resource type="PackedScene" uid="uid://j5kowiwmhm5o" path="res://Scenes/Plot.tscn" id="1_rj2da"]
+[ext_resource type="PackedScene" uid="uid://bgtrge7c7wtyd" path="res://Scenes/WorldMap/WorldMap.tscn" id="2_wrm1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fplio"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,7 +24,7 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="Game" type="Node3D"]
 
 [node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/Player/multiplayerPlayer.tscn")
+_spawnable_scenes = PackedStringArray("uid://mns52whepuln")
 spawn_path = NodePath("../PlayerSpawnNode")
 spawn_limit = 8
 
@@ -38,65 +39,69 @@ environment = SubResource("Environment_d62ax")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 141.217, 0)
 shadow_enabled = true
 
-[node name="Environment" type="Node3D" parent="World"]
+[node name="Environment" parent="World" instance=ExtResource("2_wrm1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
 
-[node name="Ground" type="CSGBox3D" parent="World/Environment"]
+[node name="Environment2" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 322.5, 0, 908.8)
+
+[node name="Ground" type="CSGBox3D" parent="World/Environment2"]
 use_collision = true
 size = Vector3(300, 0.001, 750)
 
-[node name="Road" type="CSGBox3D" parent="World/Environment/Ground"]
+[node name="Road" type="CSGBox3D" parent="World/Environment2/Ground"]
 size = Vector3(20, 1, 750)
 material = SubResource("StandardMaterial3D_n275d")
 
-[node name="Plot" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
+[node name="Plot" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, 220)
 
-[node name="Plot2" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
+[node name="Plot2" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, 110)
 
-[node name="Plot3" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
+[node name="Plot3" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, 0)
 
-[node name="Plot4" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
+[node name="Plot4" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, -110)
 
-[node name="Plot5" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, -0.4, 220)
+[node name="Plot5" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, -0.4, 120)
 
-[node name="Plot6" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, -0.4, 110)
+[node name="Plot6" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, -0.4, 10)
 
-[node name="Plot7" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, -0.4, 0)
+[node name="Plot7" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, -0.4, -100)
 
-[node name="Plot8" parent="World/Environment/Ground/Road" instance=ExtResource("1_rj2da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, -0.4, -110)
+[node name="Plot8" parent="World/Environment2/Ground/Road" instance=ExtResource("1_rj2da")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, -0.4, -210)
 
-[node name="Store" type="Node3D" parent="World/Environment/Ground/Road"]
+[node name="Store" type="Node3D" parent="World/Environment2/Ground/Road"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8, 0, 231.7)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="World/Environment/Ground/Road/Store"]
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Environment2/Ground/Road/Store"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3, 0, 22.7)
 size = Vector3(50, 1, 50)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="World/Environment/Ground/Road/Store/CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Environment2/Ground/Road/Store/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7, 4.5, -0.149994)
 size = Vector3(0.6, 9, 50.3)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="World/Environment/Ground/Road/Store/CSGBox3D/CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Environment2/Ground/Road/Store/CSGBox3D/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, -1.95, 0)
 operation = 2
 size = Vector3(1, 5, 2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="World/Environment/Ground/Road/Store/CSGBox3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Environment2/Ground/Road/Store/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7, 4.5, -0.149994)
 size = Vector3(0.6, 9, 50.3)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="World/Environment/Ground/Road/Store/CSGBox3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/Environment2/Ground/Road/Store/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.100002, 4.5, 24.65)
 size = Vector3(0.6, 9, 50.3)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="World/Environment/Ground/Road/Store/CSGBox3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/Environment2/Ground/Road/Store/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.100002, 4.5, -25.05)
 size = Vector3(0.6, 9, 50.3)
 

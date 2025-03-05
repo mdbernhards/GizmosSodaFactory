@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnxiaaaxgs2a2"]
+
+[ext_resource type="PackedScene" uid="uid://dajccewlindih" path="res://Scenes/WorldMap/Plot/Buildings/PumpStation.tscn" id="1_jvahr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pfus"]
+transparency = 1
+albedo_color = Color(0.0216832, 0.489388, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvahr"]
+transparency = 1
+albedo_color = Color(0.772549, 0.490196, 0.490196, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70alq"]
+transparency = 1
+albedo_color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[node name="GrayBoxPlot" type="Node3D"]
+
+[node name="Land" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0.6, 0)
+polygon = PackedVector2Array(75, 0, 235, 0, 225, 0.1)
+mode = 1
+spin_degrees = 45.0
+spin_sides = 20
+material = SubResource("StandardMaterial3D_8pfus")
+
+[node name="Sign" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 211.8, 1.3125, -91.3)
+radius = 0.05
+height = 1.5
+sides = 25
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sign"]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0.00149536, 0.9, 0)
+size = Vector3(0.001, 0.45, 0.8)
+
+[node name="ExclamationMark" type="CSGSphere3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100006, 1.75, 3.8147e-06)
+radius = 0.2
+radial_segments = 20
+rings = 10
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Sign/ExclamationMark"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 1.2, 0)
+radius = 0.3
+height = 1.8
+sides = 40
+cone = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Sign/ExclamationMark/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.899999, 0)
+radius = 0.3
+radial_segments = 40
+rings = 15
+
+[node name="Factory" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 143.4, 0.2, -73.4)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Factory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(70, 1, 90)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Factory/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8165, 1.2, 35.8002)
+size = Vector3(11.5, 1, 12)
+material = SubResource("StandardMaterial3D_jvahr")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Factory/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7583, 5.3125, 32.1733)
+radius = 8.6
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Factory/CSGBox3D/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4642, -2.4, 0.0746384)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Factory/CSGBox3D/CSGCylinder3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="Storage" type="Node3D" parent="Factory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -25)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Factory/Storage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(30, 1, 40)
+
+[node name="HomeOffice" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.7, 0.2, -23.8)
+
+[node name="Ground" type="CSGBox3D" parent="HomeOffice"]
+transform = Transform3D(0.999988, 0, 0, 0, 1, 0, 0, 0, 0.999988, -4.3, 0, 5.6)
+size = Vector3(40, 1, 30)
+
+[node name="Table" type="CSGBox3D" parent="HomeOffice/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.35001, 0.9, 11.4)
+size = Vector3(6.7, 0.8, 2.2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="HomeOffice/Ground/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.0999994)
+size = Vector3(1, 1, 0.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="HomeOffice/Ground/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0.45, -0.45)
+size = Vector3(1.5, 0.1, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="HomeOffice/Ground/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900009, 0.45, -0.35)
+size = Vector3(0.2, 0.1, 0.3)
+
+[node name="SkillUpWall" type="CSGBox3D" parent="HomeOffice/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 2.35, -1.35001)
+size = Vector3(1, 5.7, 23.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="HomeOffice/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85, -14.8)
+size = Vector3(40, 6.7, 0.4)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="HomeOffice/Ground/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.95, -1.5, 0)
+operation = 2
+size = Vector3(2.9, 4, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="HomeOffice/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85, 14.8)
+size = Vector3(40, 6.7, 0.4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="HomeOffice/Ground"]
+transform = Transform3D(4.47035e-08, 0, 1, 0, 1, 0, -1, 0, 4.47035e-08, 19.8002, 3.85, -0.000123978)
+size = Vector3(30, 6.7, 0.4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="HomeOffice/Ground"]
+transform = Transform3D(4.47035e-08, 0, 1, 0, 1, 0, -1, 0, 4.47035e-08, -19.8002, 3.85, -0.000123978)
+size = Vector3(30, 6.7, 0.4)
+
+[node name="Parking" type="Node3D" parent="HomeOffice"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="HomeOffice/Parking"]
+transform = Transform3D(0.999994, 0, 0, 0, 1, 0, 0, 0, 0.999994, -9.29999, -0.45, -14.4)
+size = Vector3(30, 0.1, 10)
+material = SubResource("StandardMaterial3D_70alq")
+
+[node name="PumpStation" parent="." instance=ExtResource("1_jvahr")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 84.2, 0, -45.8)
+
+[node name="Beach House" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.2, 0, -14.2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Beach House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93172, 0.5, 4.25384)
+size = Vector3(25, 1, 15)

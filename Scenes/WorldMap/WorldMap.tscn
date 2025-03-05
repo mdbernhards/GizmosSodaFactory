@@ -1,0 +1,134 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgtrge7c7wtyd"]
+
+[ext_resource type="PackedScene" uid="uid://j5kowiwmhm5o" path="res://Scenes/Plot.tscn" id="1_d720q"]
+[ext_resource type="PackedScene" uid="uid://dnxiaaaxgs2a2" path="res://Scenes/WorldMap/Plot/GrayBoxPlot.tscn" id="2_yypnj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n275d"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d720q"]
+render_priority = 1
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yypnj"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pfus"]
+transparency = 1
+albedo_color = Color(0.0216832, 0.489388, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uvr7"]
+albedo_color = Color(0.290196, 0.454902, 0.454902, 1)
+
+[node name="Environment" type="Node3D"]
+
+[node name="Ground" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(600, 0.001, 600)
+
+[node name="Road" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -477.2, 0, 0)
+size = Vector3(20, 1, 750)
+material = SubResource("StandardMaterial3D_n275d")
+
+[node name="Plot" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, 220)
+
+[node name="Plot2" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, 110)
+
+[node name="Plot3" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, 0)
+
+[node name="Plot4" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.4, -110)
+
+[node name="Plot5" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, -0.4, 120)
+
+[node name="Plot6" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, -0.4, 10)
+
+[node name="Plot7" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, -0.4, -100)
+
+[node name="Plot8" parent="Ground/Road" instance=ExtResource("1_d720q")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, -0.4, -210)
+
+[node name="Store" type="Node3D" parent="Ground/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8, 0, 231.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground/Road/Store"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3, 0, 22.7)
+size = Vector3(50, 1, 50)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground/Road/Store/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7, 4.5, -0.149994)
+size = Vector3(0.6, 9, 50.3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground/Road/Store/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, -1.95, 0)
+operation = 2
+size = Vector3(1, 5, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground/Road/Store/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7, 4.5, -0.149994)
+size = Vector3(0.6, 9, 50.3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground/Road/Store/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.100002, 4.5, 24.65)
+size = Vector3(0.6, 9, 50.3)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground/Road/Store/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.100002, 4.5, -25.05)
+size = Vector3(0.6, 9, 50.3)
+
+[node name="RingRoad" type="CSGTorus3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 0.03, 0, 0, 0, 1, 0, 0.2, 0)
+inner_radius = 225.0
+outer_radius = 255.0
+sides = 64
+ring_sides = 3
+material = SubResource("StandardMaterial3D_d720q")
+
+[node name="Lake" type="CSGCylinder3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+radius = 75.0
+sides = 50
+material = SubResource("StandardMaterial3D_yypnj")
+
+[node name="Plots" type="Node3D" parent="Ground"]
+
+[node name="Plot" parent="Ground/Plots" instance=ExtResource("1_d720q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.4, 220)
+visible = false
+
+[node name="GrayBoxPlot" parent="Ground/Plots" instance=ExtResource("2_yypnj")]
+
+[node name="NewPlot2" type="Node3D" parent="Ground/Plots"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Land" type="CSGPolygon3D" parent="Ground/Plots/NewPlot2"]
+transform = Transform3D(1, 0, 0, 0, 0.4, 0, 0, 0, 1, 0, 0.6, 0)
+polygon = PackedVector2Array(75, 0, 235, 0, 225, 0.1)
+mode = 1
+spin_degrees = 45.0
+spin_sides = 20
+material = SubResource("StandardMaterial3D_8pfus")
+
+[node name="Supermarket" type="Node3D" parent="Ground"]
+
+[node name="Distributer" type="Node3D" parent="Ground"]
+
+[node name="Bank" type="Node3D" parent="Ground"]
+
+[node name="Casino" type="Node3D" parent="Ground"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.324875, 0)
+radius = 241.1
+height = 1.35025
+sides = 30
+material = SubResource("StandardMaterial3D_5uvr7")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8eqn00qoankd"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_wyav0"]
+[ext_resource type="Script" uid="uid://dw5s20rc4j2e6" path="res://Scenes/Player/player.gd" id="1_wyav0"]
 
 [sub_resource type="PlaceholderMesh" id="PlaceholderMesh_nkyae"]
 aabb = AABB(-0.15, 0, -0.15, 0.3, 1, 0.3)
