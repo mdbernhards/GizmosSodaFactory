@@ -24,6 +24,9 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		return
+	
 	InputDirection = Input.get_vector(InputLeft, InputRight, InputForward, InputBack)
 	IsJumping = Input.is_action_just_pressed(InputJump)
 	IsSprinting = Input.is_action_pressed(InputSprint)

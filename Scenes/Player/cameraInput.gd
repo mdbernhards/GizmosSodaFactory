@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		return
+	
 	if event is InputEventMouseMotion:
 		rotateCamera(event.relative)
 		

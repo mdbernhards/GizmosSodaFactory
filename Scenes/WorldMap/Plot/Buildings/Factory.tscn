@@ -1,0 +1,633 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvjldsd4spwu5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8312"]
+transparency = 4
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Factory" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+size = Vector3(85, 1, 95)
+
+[node name="ProductionLines" type="Node3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
+
+[node name="Line1" type="Node3D" parent="CSGBox3D/ProductionLines"]
+transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, 30, 5.8, 30)
+
+[node name="MixingStation" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0, 0)
+radius = 6.7
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1/MixingStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5642, -2.4, 0.0746384)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1/MixingStation/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CO2Station" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line1"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -16.6, 1, 1.90735e-06)
+radius = 5.0
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46421, -0.1, -3.32536)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1/CO2Station/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -4.95)
+size = Vector3(6.1, 7.8, 2.7)
+
+[node name="BottlingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4, -2.4, 1.90735e-06)
+size = Vector3(7.1, 12.5, 6.4)
+
+[node name="CappingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -41.1, -2.65, 1.90735e-06)
+size = Vector3(5.6, 12.5, 6.4)
+
+[node name="Labeling" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -53.4, -2.75, 7.62939e-06)
+size = Vector3(5.4, 12.5, 6.4)
+
+[node name="Boxing" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line1"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -65.7, -4.5, 5.72205e-06)
+size = Vector3(1.9, 12.5, 6.4)
+
+[node name="Line2" type="Node3D" parent="CSGBox3D/ProductionLines"]
+transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, 15, 5.8, 30)
+
+[node name="MixingStation" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0, 0)
+radius = 6.7
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2/MixingStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5642, -2.4, 0.0746384)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2/MixingStation/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CO2Station" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line2"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -16.6, 1, 1.90735e-06)
+radius = 5.0
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46421, -0.1, -3.32536)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2/CO2Station/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -4.95)
+size = Vector3(6.1, 7.8, 2.7)
+
+[node name="BottlingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4, -2.4, 1.90735e-06)
+size = Vector3(7.1, 12.5, 6.4)
+
+[node name="CappingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -41.1, -2.65, 1.90735e-06)
+size = Vector3(5.6, 12.5, 6.4)
+
+[node name="Labeling" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -53.4, -2.75, 7.62939e-06)
+size = Vector3(5.4, 12.5, 6.4)
+
+[node name="Boxing" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line2"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -65.7, -4.5, 5.72205e-06)
+size = Vector3(1.9, 12.5, 6.4)
+
+[node name="Line3" type="Node3D" parent="CSGBox3D/ProductionLines"]
+transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, 0, 5.8, 30)
+
+[node name="MixingStation" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0, 0)
+radius = 6.7
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3/MixingStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5642, -2.4, 0.0746384)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3/MixingStation/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CO2Station" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line3"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -16.6, 1, 1.90735e-06)
+radius = 5.0
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46421, -0.1, -3.32536)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3/CO2Station/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -4.95)
+size = Vector3(6.1, 7.8, 2.7)
+
+[node name="BottlingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4, -2.4, 1.90735e-06)
+size = Vector3(7.1, 12.5, 6.4)
+
+[node name="CappingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -41.1, -2.65, 1.90735e-06)
+size = Vector3(5.6, 12.5, 6.4)
+
+[node name="Labeling" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -53.4, -2.75, 7.62939e-06)
+size = Vector3(5.4, 12.5, 6.4)
+
+[node name="Boxing" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line3"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -65.7, -4.5, 5.72205e-06)
+size = Vector3(1.9, 12.5, 6.4)
+
+[node name="Line4" type="Node3D" parent="CSGBox3D/ProductionLines"]
+transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, -15, 5.8, 30)
+
+[node name="MixingStation" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line4"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0, 0)
+radius = 6.7
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4/MixingStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5642, -2.4, 0.0746384)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4/MixingStation/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CO2Station" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line4"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -16.6, 1, 1.90735e-06)
+radius = 5.0
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46421, -0.1, -3.32536)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4/CO2Station/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -4.95)
+size = Vector3(6.1, 7.8, 2.7)
+
+[node name="BottlingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4, -2.4, 1.90735e-06)
+size = Vector3(7.1, 12.5, 6.4)
+
+[node name="CappingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -41.1, -2.65, 1.90735e-06)
+size = Vector3(5.6, 12.5, 6.4)
+
+[node name="Labeling" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -53.4, -2.75, 7.62939e-06)
+size = Vector3(5.4, 12.5, 6.4)
+
+[node name="Boxing" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line4"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -65.7, -4.5, 5.72205e-06)
+size = Vector3(1.9, 12.5, 6.4)
+
+[node name="Line5" type="Node3D" parent="CSGBox3D/ProductionLines"]
+transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, -30, 5.8, 30)
+
+[node name="MixingStation" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line5"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0, 0)
+radius = 6.7
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5/MixingStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5642, -2.4, 0.0746384)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5/MixingStation/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CO2Station" type="CSGCylinder3D" parent="CSGBox3D/ProductionLines/Line5"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -16.6, 1, 1.90735e-06)
+radius = 5.0
+height = 10.525
+sides = 33
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46421, -0.1, -3.32536)
+size = Vector3(3, 5.8, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5/CO2Station/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62634, 0, -1.62634)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -4.95)
+size = Vector3(6.1, 7.8, 2.7)
+
+[node name="BottlingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4, -2.4, 1.90735e-06)
+size = Vector3(7.1, 12.5, 6.4)
+
+[node name="CappingStation" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -41.1, -2.65, 1.90735e-06)
+size = Vector3(5.6, 12.5, 6.4)
+
+[node name="Labeling" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -53.4, -2.75, 7.62939e-06)
+size = Vector3(5.4, 12.5, 6.4)
+
+[node name="Boxing" type="CSGBox3D" parent="CSGBox3D/ProductionLines/Line5"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -65.7, -4.5, 5.72205e-06)
+size = Vector3(1.9, 12.5, 6.4)
+
+[node name="SideRoom" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.2, 0, 22)
+size = Vector3(14.4, 1, 43.8)
+
+[node name="MixingStations" type="Node3D" parent="SideRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, -1.4)
+
+[node name="Mixing Station" type="CSGCylinder3D" parent="SideRoom/MixingStations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 19)
+radius = 2.4
+height = 3.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, -0.1, 0)
+size = Vector3(0.2, 2.8, 1.8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149998, 0.8, 0)
+size = Vector3(0.1, 0.6, 1)
+material = SubResource("StandardMaterial3D_q8312")
+
+[node name="Mixing Station2" type="CSGCylinder3D" parent="SideRoom/MixingStations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 11)
+radius = 2.4
+height = 3.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, -0.1, 0)
+size = Vector3(0.2, 2.8, 1.8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149998, 0.8, 0)
+size = Vector3(0.1, 0.6, 1)
+material = SubResource("StandardMaterial3D_q8312")
+
+[node name="Mixing Station3" type="CSGCylinder3D" parent="SideRoom/MixingStations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 3)
+radius = 2.4
+height = 3.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, -0.1, 0)
+size = Vector3(0.2, 2.8, 1.8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station3/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149998, 0.8, 0)
+size = Vector3(0.1, 0.6, 1)
+material = SubResource("StandardMaterial3D_q8312")
+
+[node name="Mixing Station4" type="CSGCylinder3D" parent="SideRoom/MixingStations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -5)
+radius = 2.4
+height = 3.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, -0.1, 0)
+size = Vector3(0.2, 2.8, 1.8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station4/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149998, 0.8, 0)
+size = Vector3(0.1, 0.6, 1)
+material = SubResource("StandardMaterial3D_q8312")
+
+[node name="Mixing Station5" type="CSGCylinder3D" parent="SideRoom/MixingStations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -13)
+radius = 2.4
+height = 3.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, -0.1, 0)
+size = Vector3(0.2, 2.8, 1.8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/MixingStations/Mixing Station5/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149998, 0.8, 0)
+size = Vector3(0.1, 0.6, 1)
+material = SubResource("StandardMaterial3D_q8312")
+
+[node name="Walls" type="Node3D" parent="SideRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 0, 3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.35, 2.75, -1.90735e-06)
+size = Vector3(0.1, 4.5, 49.9)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/Walls/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 18.2)
+operation = 2
+size = Vector3(0.4, 3.6, 4.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SideRoom/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.15, 2.75, -24.9)
+size = Vector3(0.1, 4.5, 14.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SideRoom/Walls/CSGBox3D2"]
+transform = Transform3D(1, 0, 1.77636e-14, 0, 1, 0, -1.77636e-14, 0, 1, 8.71718e-07, -0.6, -1.8)
+operation = 2
+size = Vector3(0.4, 3.6, 4.2)
+
+[node name="CO2Stations" type="Node3D" parent="SideRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69998, 2.2, -20.4)
+
+[node name="CO2Station" type="Node3D" parent="SideRoom/CO2Stations"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station"]
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23398, 0)
+radius = 0.8
+height = 0.732031
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station"]
+flip_faces = true
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+radius = 0.02
+height = 0.5
+
+[node name="CO2Station2" type="Node3D" parent="SideRoom/CO2Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station2"]
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station2/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station2/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23398, 0)
+radius = 0.8
+height = 0.732031
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station2"]
+flip_faces = true
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station2/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+radius = 0.02
+height = 0.5
+
+[node name="CO2Station3" type="Node3D" parent="SideRoom/CO2Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station3"]
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station3/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station3/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23398, 0)
+radius = 0.8
+height = 0.732031
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station3"]
+flip_faces = true
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station3/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+radius = 0.02
+height = 0.5
+
+[node name="CO2Station4" type="Node3D" parent="SideRoom/CO2Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station4"]
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station4/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station4/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23398, 0)
+radius = 0.8
+height = 0.732031
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station4"]
+flip_faces = true
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station4/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+radius = 0.02
+height = 0.5
+
+[node name="CO2Station5" type="Node3D" parent="SideRoom/CO2Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station5"]
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station5/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station5/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23398, 0)
+radius = 0.8
+height = 0.732031
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station5"]
+flip_faces = true
+radius = 0.8
+height = 3.5
+sides = 30
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station5/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500004, 0.2625, 0)
+operation = 2
+flip_faces = true
+radius = 0.6
+height = 2.275
+sides = 30
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="SideRoom/CO2Stations/CO2Station5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+radius = 0.02
+height = 0.5
+
+[node name="Storage" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -25)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Storage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.55)
+size = Vector3(30, 1, 45.1)
+
+[node name="Walls" type="Node3D" parent="Storage"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Storage/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.05, 2.75, 2.55)
+size = Vector3(0.1, 4.5, 45.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Storage/Walls/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -15.85)
+operation = 2
+size = Vector3(0.4, 3.6, 7.9)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Storage/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 2.75, 25.1)
+size = Vector3(15.6, 4.5, 0.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Storage/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.95, 2.75, 2.55)
+size = Vector3(45.1, 4.5, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Storage/Walls/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.55, -0.3, 0)
+operation = 2
+size = Vector3(9.5, 4.4, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Storage/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0499992, 2.75, -19.95)
+size = Vector3(29.9, 4.5, 0.1)
+
+[node name="Shelves" type="Node3D" parent="Storage"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 4.15, 17.7)
+size = Vector3(1.6, 7.3, 13.8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 4.15, 0.0999966)
+size = Vector3(1.6, 7.3, 13.8)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.2, 4.15, 24)
+size = Vector3(1.6, 7.3, 21)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.19999, 4.15, 18)
+size = Vector3(1.6, 7.3, 21)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.2, 4.15, 12)
+size = Vector3(1.6, 7.3, 21)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.2, 4.15, 6)
+size = Vector3(1.6, 7.3, 21)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.2, 4.15, 0)
+size = Vector3(1.6, 7.3, 21)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Storage/Shelves"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.2, 4.15, -6)
+size = Vector3(1.6, 7.3, 21)

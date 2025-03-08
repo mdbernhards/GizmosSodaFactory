@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj07rxqhxgb14"]
+
+[ext_resource type="PackedScene" uid="uid://cvjldsd4spwu5" path="res://Scenes/WorldMap/Plot/Buildings/Factory.tscn" id="1_rkgq3"]
+[ext_resource type="PackedScene" uid="uid://dar6jjr430tbo" path="res://Scenes/MiniPrototype/mini_prototype.tscn" id="2_pnm5q"]
+[ext_resource type="PackedScene" uid="uid://dajccewlindih" path="res://Scenes/WorldMap/Plot/Buildings/PumpStation.tscn" id="2_t1aww"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pfus"]
+transparency = 4
+albedo_color = Color(0.0216832, 0.489388, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pnm5q"]
+height = 0.4
+radius = 0.1
+
+[node name="GrayBoxPlot" type="Node3D"]
+
+[node name="Land" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0.6, 0)
+polygon = PackedVector2Array(75, 0, 235, 0, 225, 0.1)
+mode = 1
+spin_degrees = 45.0
+spin_sides = 20
+material = SubResource("StandardMaterial3D_8pfus")
+
+[node name="Sign" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 211.8, 1.3125, -91.3)
+radius = 0.05
+height = 1.5
+sides = 25
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sign"]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0.00149536, 0.9, 0)
+size = Vector3(0.001, 0.45, 0.8)
+
+[node name="ExclamationMark" type="CSGSphere3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100006, 1.75, 3.8147e-06)
+radius = 0.2
+radial_segments = 20
+rings = 10
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Sign/ExclamationMark"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 1.2, 0)
+radius = 0.3
+height = 1.8
+sides = 40
+cone = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Sign/ExclamationMark/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.899999, 0)
+radius = 0.3
+radial_segments = 40
+rings = 15
+
+[node name="Factory" parent="." instance=ExtResource("1_rkgq3")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 149.4, 0.2, -79.3)
+
+[node name="Bottle" type="RigidBody3D" parent="."]
+transform = Transform3D(0.999965, 0, 0, 0, 1, 0, 0, 0, 0.999965, 3.30005, 1.7985, -40.1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Bottle"]
+transform = Transform3D(0.999982, 0, 0, 0, 1, 0, 0, 0, 0.999982, 0, 0, 0)
+radius = 0.1
+height = 0.4
+sides = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bottle"]
+transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, 0, 0.999991, 0, 0, 0)
+shape = SubResource("CylinderShape3D_pnm5q")
+
+[node name="MiniPrototype" parent="." instance=ExtResource("2_pnm5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.7, 0.2, -23.8)
+
+[node name="PumpStation" parent="." instance=ExtResource("2_t1aww")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 84.2, 0, -45.8)
+
+[node name="Beach House" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.2, 0, -14.2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Beach House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93172, 0.5, 4.25384)
+size = Vector3(25, 1, 15)

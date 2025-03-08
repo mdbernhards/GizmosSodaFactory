@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://oegjtyd830dn"]
+
+[ext_resource type="Script" uid="uid://dcxfuqtvy06n4" path="res://Scenes/WorldMap/Plot/Buildings/PumpStation/WaterTank.gd" id="1_enapm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1aww"]
+render_priority = 1
+transparency = 4
+albedo_color = Color(0.619608, 0.619608, 0.619608, 0.823529)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnm5q"]
+transparency = 4
+albedo_color = Color(0.264742, 0.395511, 0.620331, 1)
+
+[node name="WaterTank" type="CSGCylinder3D" groups=["WaterTank"]]
+radius = 3.1
+height = 5.575
+sides = 25
+material = SubResource("StandardMaterial3D_t1aww")
+script = ExtResource("1_enapm")
+
+[node name="Inside" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.999967, 0, 1.44199e-17, 0, 1, 0, -1.44199e-17, 0, 0.999967, 0, 0.0156252, 0)
+operation = 2
+radius = 2.4
+height = 5.63125
+sides = 30
+material = SubResource("StandardMaterial3D_pnm5q")
+
+[node name="WaterLevelInTank" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.999949, 0, 2.1684e-17, 0, 1, 0, -2.1684e-17, 0, 0.999949, 0, -0.0480466, 0)
+radius = 2.4
+height = 5.50391
+sides = 30
+material = SubResource("StandardMaterial3D_pnm5q")

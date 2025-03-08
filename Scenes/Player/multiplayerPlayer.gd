@@ -47,6 +47,9 @@ func _physics_process(delta: float) -> void:
 		applyMovementBasedOnInput(delta)
 
 func applyMovementBasedOnInput(delta):
+	if Input.is_action_just_pressed("pick_up"):
+		pass
+	
 	# Freefly mode
 	if CanFreefly and PlayerInput.IsFreeflying:
 		if not IsFreeflying:
